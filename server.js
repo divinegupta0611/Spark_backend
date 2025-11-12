@@ -12,8 +12,7 @@ const app = express();
 // ✅ Enable JSON parsing for POST requests
 app.use(express.json());
 const allowedOrigins = [
-  "http://localhost:5173",
-  "https://spark-frontend-olive.vercel.app/"
+  "https://spark-frontend-olive.vercel.app"
 ];
 
 app.use(cors({
