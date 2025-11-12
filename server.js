@@ -17,8 +17,7 @@ const allowedOrigins = [
 
 app.use(cors({
   origin: "https://spark-frontend-olive.vercel.app",
-  methods: ["GET", "POST", "OPTIONS"],
-
+  methods: ["GET", "POST", "OPTIONS"]
 }));
 
 // Optionally handle preflight requests globally
