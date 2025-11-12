@@ -12,9 +12,7 @@ router.get("/", (req, res) => {
 // Get random company
 router.get("/random-nse", async (req, res) => {
   try {
-    const count = await Company.countDocuments();
-    const randomIndex = Math.floor(Math.random() * count);
-    const randomCompany = await Company.findOne().skip(randomIndex);
+    const [randomCompany] = await Company.aggregate([{ $sample: { size: 1 } }]);
 
     if (!randomCompany) {
       return res.status(404).json({ message: "No companies found" });
