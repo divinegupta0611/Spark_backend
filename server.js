@@ -21,7 +21,7 @@ app.use(cors({
 }));
 
 // Optionally handle preflight requests globally
-app.options("*", cors());
+// app.options("*", cors());
 
 
 // Middleware
